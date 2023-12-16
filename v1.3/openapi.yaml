@@ -147,47 +147,6 @@ paths:
                             type: string
                           isPastEpisode:
                             type: boolean
-                        required:
-                          - srno
-                          - showId
-                          - showtime
-                          - showname
-                          - description
-                          - director
-                          - starCast
-                          - duration
-                          - endtime
-                          - showCategory
-                          - showGenre
-                          - episode_num
-                          - willRepeat
-                          - episode_desc
-                          - isCatchupAvailable
-                          - twitter_handle
-                          - keywords
-                          - premiumText
-                          - isCam
-                          - pcr
-                          - channel_id
-                          - startTime
-                          - showLanguageId
-                          - showCategoryId
-                          - showGenreId
-                          - renderImage
-                          - episodeThumbnail
-                          - episodePoster
-                          - isLiveAvailable
-                          - canRecord
-                          - canRecordStb
-                          - stbCatchupAvailable
-                          - isDownloadable
-                          - startEpoch
-                          - endEpoch
-                          - channel_name
-                          - is_premium
-                          - plan_type
-                          - business_type
-                          - isPastEpisode
                   channel_id:
                     type: integer
                   channel_name:
