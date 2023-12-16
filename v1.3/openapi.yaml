@@ -1,0 +1,317 @@
+openapi: 3.1.0
+info:
+  title: JTV API - OpenAPI 3.1
+  description: JTV API documentation in Swagger doc
+  termsOfService: https://github.com/rrjanbiah/JTVOpenAPIspec
+  contact:
+    email: nospam
+  license:
+    name: GNU Affero General Public License v3.0
+    url: https://spdx.org/licenses/AGPL-3.0-or-later.html
+  version: 3.0
+externalDocs:
+  description: Find out more about JTV API
+  url: https://github.com/rrjanbiah/JTVOpenAPIspec
+servers:
+  - url: https://jiotv.data.cdn.jio.com/apis/v1.3
+tags:
+  - name: jiotv
+    description: JTV OpenAPI or Swagger Spec
+    externalDocs:
+      description: Find out more
+      url: https://github.com/rrjanbiah/JTVOpenAPIspec
+paths:
+  /getepg/get:
+    get:
+      tags:
+        - epg
+      summary: Finds EPG by channel_id and offset
+      description: Returns EPG data for the channel using the day offset
+      parameters:
+        - name: channel_id
+          in: query
+          description: channel_id
+          required: true
+          schema:
+            channel_id:
+              type: integer
+        - name: offset
+          in: query
+          description: "offset "
+          required: true
+          schema:
+            offset:
+              type: integer
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $schema: http://json-schema.org/draft-04/schema#
+                type: object
+                properties:
+                  epg:
+                    type: array
+                    items:
+                      - type: object
+                        properties:
+                          srno:
+                            type: integer
+                          showId:
+                            type: string
+                          showtime:
+                            type: string
+                          showname:
+                            type: string
+                          description:
+                            type: string
+                          director:
+                            type: string
+                          starCast:
+                            type: string
+                          duration:
+                            type: integer
+                          endtime:
+                            type: string
+                          showCategory:
+                            type: string
+                          showGenre:
+                            type: array
+                            items:
+                              - type: string
+                          episode_num:
+                            type: integer
+                          willRepeat:
+                            type: boolean
+                          episode_desc:
+                            type: string
+                          isCatchupAvailable:
+                            type: boolean
+                          twitter_handle:
+                            type: string
+                          keywords:
+                            type: array
+                            items:
+                              - type: string
+                              - type: string
+                              - type: string
+                              - type: string
+                              - type: string
+                              - type: string
+                              - type: string
+                              - type: string
+                          premiumText:
+                            type: string
+                          isCam:
+                            type: integer
+                          pcr:
+                            type: string
+                          channel_id:
+                            type: integer
+                          startTime:
+                            type: integer
+                          showLanguageId:
+                            type: integer
+                          showCategoryId:
+                            type: integer
+                          showGenreId:
+                            type: integer
+                          renderImage:
+                            type: boolean
+                          episodeThumbnail:
+                            type: string
+                          episodePoster:
+                            type: string
+                          isLiveAvailable:
+                            type: boolean
+                          canRecord:
+                            type: boolean
+                          canRecordStb:
+                            type: boolean
+                          stbCatchupAvailable:
+                            type: boolean
+                          isDownloadable:
+                            type: boolean
+                          startEpoch:
+                            type: integer
+                          endEpoch:
+                            type: integer
+                          channel_name:
+                            type: string
+                          is_premium:
+                            type: boolean
+                          plan_type:
+                            type: string
+                          business_type:
+                            type: string
+                          isPastEpisode:
+                            type: boolean
+                        required:
+                          - srno
+                          - showId
+                          - showtime
+                          - showname
+                          - description
+                          - director
+                          - starCast
+                          - duration
+                          - endtime
+                          - showCategory
+                          - showGenre
+                          - episode_num
+                          - willRepeat
+                          - episode_desc
+                          - isCatchupAvailable
+                          - twitter_handle
+                          - keywords
+                          - premiumText
+                          - isCam
+                          - pcr
+                          - channel_id
+                          - startTime
+                          - showLanguageId
+                          - showCategoryId
+                          - showGenreId
+                          - renderImage
+                          - episodeThumbnail
+                          - episodePoster
+                          - isLiveAvailable
+                          - canRecord
+                          - canRecordStb
+                          - stbCatchupAvailable
+                          - isDownloadable
+                          - startEpoch
+                          - endEpoch
+                          - channel_name
+                          - is_premium
+                          - plan_type
+                          - business_type
+                          - isPastEpisode
+                  channel_id:
+                    type: integer
+                  channel_name:
+                    type: string
+                  screenType:
+                    type: integer
+                  logoUrl:
+                    type: string
+                  broadcasterId:
+                    type: integer
+                  serverDate:
+                    type: string
+                  isCam:
+                    type: integer
+                  plan_type:
+                    type: string
+                  business_type:
+                    type: string
+                  os:
+                    type: array
+                    items:
+                      - type: string
+                      - type: string
+                      - type: string
+                      - type: string
+                  deviceType:
+                    type: array
+                    items:
+                      - type: string
+                      - type: string
+                      - type: string
+                      - type: string
+                      - type: string
+                      - type: string
+                  user_category:
+                    type: array
+                    items:
+                      - type: string
+                      - type: string
+                      - type: string
+                      - type: string
+                  channel_category_name:
+                    type: string
+              example:
+                epg:
+                  - srno: 231216143000
+                    showId: CHN-007480000PRG-241440000
+                    showtime: "00:00:00"
+                    showname: Power Lunch
+                    description: >-
+                      Finance experts and analysts have a discussion on
+                      moneymaking strategies and plans in the fields of real
+                      estate and stock market.
+                    director: ""
+                    starCast: ""
+                    duration: 30
+                    endtime: "00:30:00"
+                    showCategory: Business and Finance
+                    showGenre:
+                      - Business & Finance
+                    episode_num: -1
+                    willRepeat: false
+                    episode_desc: ""
+                    isCatchupAvailable: true
+                    twitter_handle: https://twitter.com/CNBCPrimeTV
+                    keywords:
+                      - Economic
+                      - Stock Market
+                      - Market
+                      - Real estate
+                      - Updates
+                      - Advice
+                      - Finance
+                      - Business
+                    premiumText: ""
+                    isCam: 0
+                    pcr: |+
+
+                    channel_id: 143
+                    startTime: 0
+                    showLanguageId: 6
+                    showCategoryId: 4
+                    showGenreId: 5
+                    renderImage: false
+                    episodeThumbnail: 2023-12-16/231216143000_s.jpg
+                    episodePoster: 2023-12-16/231216143000.jpg
+                    isLiveAvailable: true
+                    canRecord: true
+                    canRecordStb: true
+                    stbCatchupAvailable: true
+                    isDownloadable: false
+                    startEpoch: 1702665000000
+                    endEpoch: 1702666800000
+                    channel_name: CNBC Tv18 Prime HD
+                    is_premium: false
+                    plan_type: free
+                    business_type: free
+                    isPastEpisode: true
+                channel_id: 143
+                channel_name: CNBC Tv18 Prime HD
+                screenType: 2
+                logoUrl: CNBC_Tv18_Prime_HD.png
+                broadcasterId: 3
+                serverDate: "2023-12-16T00:00:00+05:30"
+                isCam: 0
+                plan_type: free
+                business_type: free
+                os:
+                  - android
+                  - feature
+                  - ios
+                  - web
+                deviceType:
+                  - feature
+                  - jiobook
+                  - phone
+                  - tablet
+                  - tv
+                  - web
+                user_category:
+                  - GUEST
+                  - JIO
+                  - NONJIO
+                  - tvYR7NSNn7rymo3F
+                channel_category_name: Business News
+        "400":
+          description: Invalid status value
